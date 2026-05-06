@@ -1,8 +1,10 @@
 import Fastify from 'fastify';
+import { registerImportNovelRoute } from './routes/importNovel';
 
 export function buildServer() {
   const app = Fastify({ logger: true });
   app.get('/health', async () => ({ ok: true }));
+  app.register(registerImportNovelRoute);
   return app;
 }
 
