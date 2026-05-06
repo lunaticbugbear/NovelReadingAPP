@@ -1,0 +1,8 @@
+{
+  "name": "NovelShelf",
+  "short_name": "NovelShelf",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101418",
+  "theme_color": "#181d24"
+}
