@@ -1,0 +1,16 @@
+{
+  "name": "novel-reader-app",
+  "private": true,
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:frontend dev:backend",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:backend": "npm --workspace backend run dev",
+    "test": "npm --workspace frontend run test && npm --workspace backend run test",
+    "typecheck": "npm --workspace frontend run typecheck && npm --workspace backend run typecheck"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3"
+  }
+}
