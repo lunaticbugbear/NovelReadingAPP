@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SourcesView } from '../features/sources/SourcesView';
 
 const tabs = ['Library', 'Sources', 'Downloads', 'Settings'] as const;
 type Tab = (typeof tabs)[number];
@@ -8,7 +9,9 @@ export function AppShell() {
   return (
     <div className="app-shell">
       <header className="top-bar"><h1>NovelShelf</h1></header>
-      <main className="tab-panel"><h2>{activeTab}</h2><p>{activeTab} content will appear here.</p></main>
+      <main className="tab-panel">
+        {activeTab === 'Sources' ? <SourcesView /> : <><h2>{activeTab}</h2><p>{activeTab} content will appear here.</p></>}
+      </main>
       <nav className="bottom-nav" aria-label="Main navigation">
         {tabs.map((tab) => (
           <button key={tab} className={activeTab === tab ? 'active' : ''} onClick={() => setActiveTab(tab)}>{tab}</button>
