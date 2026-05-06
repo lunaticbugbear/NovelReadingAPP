@@ -1,3 +1,4 @@
+import { novelUpdatesAdapter } from './novelUpdates';
 import type { ParsedNovel, SourceAdapter } from './types';
 
 function createDemoAdapter(id: string, name: string, baseUrl: string): SourceAdapter {
@@ -31,7 +32,7 @@ function createDemoAdapter(id: string, name: string, baseUrl: string): SourceAda
 export const adapters: SourceAdapter[] = [
   createDemoAdapter('noveltrust', 'NovelTrust', 'https://noveltrust.com/'),
   createDemoAdapter('novelhi', 'NovelHi', 'https://novelhi.com/'),
-  createDemoAdapter('novelupdates', 'Novel Updates', 'https://www.novelupdates.com/'),
+  novelUpdatesAdapter,
   createDemoAdapter('empirenovel', 'Empire Novel', 'https://www.empirenovel.com/')
 ];
 
